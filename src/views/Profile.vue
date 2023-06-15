@@ -1,11 +1,8 @@
 <template>
-    <div class="container">
-        <i class="fa fa-apple" id="apple"></i>
-        <i class="fa fa-twitter" id="twitter"></i>
-        <i class="fa fa-github-square github" id="github"
-            @click="openInNewTab('https://github.com/CZDXWX1226566881/Blog')"></i>
-        <i class="fa fa-facebook-square" id="facebook"></i>
-    </div>
+    <i class="fa fa-apple" id="apple"></i>
+    <i class="fa fa-twitter" id="twitter"></i>
+    <i class="fa fa-github-square github" id="github" @click="openInNewTab('https://github.com/CZDXWX1226566881/Blog')"></i>
+    <i class="fa fa-facebook-square" id="facebook"></i>
 </template>
 
 <script setup lang="ts">
@@ -20,15 +17,6 @@ const openInNewTab = (url) => {
 <style scoped>
 @import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
-
-.container {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-}
 
 #apple,
 #twitter,

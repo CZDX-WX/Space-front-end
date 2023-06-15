@@ -1,7 +1,5 @@
 <template>
     <div class="container">
-
-
         <el-affix target=".container">
             <div class="navbar" @mouseover="expandNavbar" @mouseout="collapseNavbar">
                 <nav class="scene_nav" :class="{ 'collapsed': isCollapsed }">
@@ -19,10 +17,10 @@
 
 
 
-        <div v-if="isLoading" class="loading-overlay">
-            <!-- 加载动画 -->
+        <div class="main">
+            <router-view />
         </div>
-        <router-view v-if="!isLoading" />
+
 
         <el-backtop :right="100" :bottom="100" />
 
@@ -33,6 +31,7 @@
 import { useRouter } from 'vue-router';
 import { MyTabs } from '@/assets/data'
 import { ref, onMounted, onUnmounted } from 'vue';
+
 
 //控制加载动画
 const isLoading = ref(false);
@@ -46,6 +45,8 @@ function expandNavbar() {
 function collapseNavbar() {
     isCollapsed.value = true;
 }
+
+
 
 
 </script>
@@ -67,6 +68,15 @@ $buttonMargin: -8px;
     align-content: center;
 }
 
+.main {
+    height: 100vh;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+}
 
 .navbar {
     height: 10vh;
@@ -74,6 +84,7 @@ $buttonMargin: -8px;
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: flex-start;
     background: transparent;
     top: 0;
     /* 导航栏高度 */
@@ -83,14 +94,14 @@ $buttonMargin: -8px;
 .scene_nav.collapsed {
     opacity: 0;
     /* 隐藏时的不透明度 */
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
     /* 不透明度过渡效果 */
 }
 
 .scene_nav {
     opacity: 1;
     /* 初始不透明度 */
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
     /* 不透明度过渡效果 */
 
     &_list {

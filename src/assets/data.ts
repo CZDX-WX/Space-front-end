@@ -23,6 +23,22 @@ export const MyTabs = [{
     path: 'tab7',
     name: 'Tab7',
 }, {
-    path: 'tab8',
-    name: 'Tab8',
+    path: 'logout',
+    name: 'Logout',
 }]
+
+
+
+// export const radios = [{
+//     label: 'Back', checked: true
+// }, {
+//     label: 'Home', checked: false
+// }, {
+//     label: 'Search', checked: false
+// }, {
+//     label: 'Star', checked: false
+// }, {
+//     label: 'More', checked: false
+// }, {
+//     label: 'Refresh', checked: false
+// }]
